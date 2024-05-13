@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "name": "root2",
+      "password": "root2pass",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts":[
+    {"name":"/"}
+  ],
+  "permissions": [
+    {
+      "user": "root2",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "worker_management_queue",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues":[
+    {
+      "name":"worker_management_queue",
+      "vhost":"/",
+      "durable":false,
+      "auto_delete":false,
+      "arguments":{}
+    }
+  ]
+}
